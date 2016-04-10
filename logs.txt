@@ -402,3 +402,104 @@
 2016-04-10T21:58:09.364096+00:00 app[web.1]: 	... 30 more
 2016-04-10T21:58:09.623498+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=spacebook-austin.herokuapp.com request_id=c27b691f-cb27-4937-9ad0-9be458395321 fwd="212.17.44.28" dyno=web.1 connect=0ms service=33ms status=404 bytes=436
 2016-04-10T21:58:09.758698+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=spacebook-austin.herokuapp.com request_id=af567c20-e5da-4735-bc7a-06cfcce0aaee fwd="212.17.44.28" dyno=web.1 connect=1ms service=6ms status=404 bytes=436
+2016-04-10T22:03:04.754365+00:00 app[web.1]:   Position: 128 ] which will not be reported to listeners!
+2016-04-10T22:03:04.754366+00:00 app[web.1]: org.postgresql.util.PSQLException: ERROR: syntax error at or near "`"
+2016-04-10T22:03:04.754367+00:00 app[web.1]:   Position: 128
+2016-04-10T22:03:04.754367+00:00 app[web.1]: 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2102)
+2016-04-10T22:03:04.754368+00:00 app[web.1]: 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1835)
+2016-04-10T22:03:04.754368+00:00 app[web.1]: 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+2016-04-10T22:03:04.754369+00:00 app[web.1]: 	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:500)
+2016-04-10T22:03:04.754369+00:00 app[web.1]: 	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:374)
+2016-04-10T22:03:04.754371+00:00 app[web.1]: 	at com.mchange.v2.c3p0.impl.NewProxyStatement.executeUpdate(NewProxyStatement.java:436)
+2016-04-10T22:03:04.754370+00:00 app[web.1]: 	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:302)
+2016-04-10T22:03:04.754371+00:00 app[web.1]: 	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:227)
+2016-04-10T22:03:04.754372+00:00 app[web.1]: 	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+2016-04-10T22:03:04.754372+00:00 app[web.1]: 	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:509)
+2016-04-10T22:03:04.754373+00:00 app[web.1]: 	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1797)
+2016-04-10T22:03:04.754373+00:00 app[web.1]: 	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96)
+2016-04-10T22:03:04.754379+00:00 app[web.1]: 	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
+2016-04-10T22:03:04.754379+00:00 app[web.1]: 	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899)
+2016-04-10T22:03:04.754380+00:00 app[web.1]: 	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:208)
+2016-04-10T22:03:04.754381+00:00 app[web.1]: 	at play.plugins.PluginCollection.onApplicationStart(PluginCollection.java:515)
+2016-04-10T22:03:04.754381+00:00 app[web.1]: 	at play.Play.start(Play.java:537)
+2016-04-10T22:03:04.754382+00:00 app[web.1]: 	at play.Play.init(Play.java:309)
+2016-04-10T22:03:04.754382+00:00 app[web.1]: 	at play.server.Server.main(Server.java:160)
+2016-04-10T22:03:04.754445+00:00 app[web.1]: 22:03:04,754 ERROR ~ HHH000388: Unsuccessful: alter table Message add index FK_o875gmv4ci56605u1aj6j237o (`to_id`), add constraint FK_o875gmv4ci56605u1aj6j237o foreign key (`to_id`) references `User` (id)
+2016-04-10T22:03:04.754480+00:00 app[web.1]: 22:03:04,754 ERROR ~ ERROR: syntax error at or near "`"
+2016-04-10T22:03:04.754481+00:00 app[web.1]:   Position: 128
+2016-04-10T22:03:04.835972+00:00 app[web.1]: 22:03:04,835 INFO  ~ Application 'spacebook' is now started !
+2016-04-10T22:03:04.927993+00:00 app[web.1]: 22:03:04,925 INFO  ~ Listening for HTTP on port 17292 ...
+2016-04-10T22:03:05.250045+00:00 heroku[web.1]: State changed from starting to up
+2016-04-10T22:03:06.794316+00:00 heroku[router]: at=info method=GET path="/" host=spacebook-austin.herokuapp.com request_id=8073813b-a50a-4854-aee4-e47f5eed1672 fwd="212.17.44.28" dyno=web.1 connect=2ms service=218ms status=200 bytes=1928
+2016-04-10T22:03:06.977783+00:00 heroku[router]: at=info method=GET path="/public/stylesheets/main.css" host=spacebook-austin.herokuapp.com request_id=c6558d05-dd77-46e5-9857-1b974c2b0bd4 fwd="212.17.44.28" dyno=web.1 connect=1ms service=9ms status=200 bytes=243
+2016-04-10T22:04:45.267474+00:00 heroku[router]: at=info method=GET path="/" host=spacebook-austin.herokuapp.com request_id=f3eee0d9-0e19-49f4-850c-bc5d9037ae43 fwd="212.17.44.28" dyno=web.1 connect=0ms service=11ms status=200 bytes=1928
+2016-04-10T22:04:45.468168+00:00 heroku[router]: at=info method=GET path="/public/stylesheets/main.css" host=spacebook-austin.herokuapp.com request_id=f7d5feec-e218-4d28-af85-2c3e7e287064 fwd="212.17.44.28" dyno=web.1 connect=0ms service=3ms status=304 bytes=127
+2016-04-10T22:04:48.362779+00:00 heroku[router]: at=info method=GET path="/signup" host=spacebook-austin.herokuapp.com request_id=7e50080f-18a2-4035-9509-9050d63d3ba0 fwd="212.17.44.28" dyno=web.1 connect=1ms service=24ms status=200 bytes=2860
+2016-04-10T22:05:18.611094+00:00 app[web.1]: 22:05:18,607 INFO  ~ The following user has been added -->austin cunningham austincunningham@oceanfree.net secret 4 irish
+2016-04-10T22:05:18.806004+00:00 app[web.1]: 22:05:18,805 WARN  ~ SQL Error: 0, SQLState: 42601
+2016-04-10T22:05:18.806047+00:00 app[web.1]: 22:05:18,806 ERROR ~ ERROR: syntax error at or near "`"
+2016-04-10T22:05:18.806049+00:00 app[web.1]:   Position: 13
+2016-04-10T22:05:18.901953+00:00 heroku[router]: at=info method=POST path="/register" host=spacebook-austin.herokuapp.com request_id=bc3ba42b-54e3-4239-886a-ff1f7334b2d6 fwd="212.17.44.28" dyno=web.1 connect=0ms service=461ms status=500 bytes=585
+2016-04-10T22:05:18.911469+00:00 app[web.1]: 22:05:18,903 ERROR ~ 
+2016-04-10T22:05:18.911504+00:00 app[web.1]: 
+2016-04-10T22:05:18.911505+00:00 app[web.1]: @6pl6l940m
+2016-04-10T22:05:18.911507+00:00 app[web.1]: 
+2016-04-10T22:05:18.911507+00:00 app[web.1]: Internal Server Error (500) for request POST /register
+2016-04-10T22:05:18.911509+00:00 app[web.1]: Execution exception (In /app/controllers/Accounts.java around line 33)
+2016-04-10T22:05:18.911510+00:00 app[web.1]: PersistenceException occured : org.hibernate.exception.SQLGrammarException: could not execute statement
+2016-04-10T22:05:18.911511+00:00 app[web.1]: 
+2016-04-10T22:05:18.911512+00:00 app[web.1]: play.exceptions.JavaExecutionException: org.hibernate.exception.SQLGrammarException: could not execute statement
+2016-04-10T22:05:18.911513+00:00 app[web.1]: 	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:228)
+2016-04-10T22:05:18.911514+00:00 app[web.1]: 	at Invocation.HTTP Request(Play!)
+2016-04-10T22:05:18.911515+00:00 app[web.1]: Caused by: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not execute statement
+2016-04-10T22:05:18.911516+00:00 app[web.1]: 	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1387)
+2016-04-10T22:05:18.911517+00:00 app[web.1]: 	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1310)
+2016-04-10T22:05:18.911517+00:00 app[web.1]: 	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1316)
+2016-04-10T22:05:18.911518+00:00 app[web.1]: 	at org.hibernate.ejb.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:881)
+2016-04-10T22:05:18.911518+00:00 app[web.1]: 	at play.db.jpa.JPABase._save(JPABase.java:35)
+2016-04-10T22:05:18.911519+00:00 app[web.1]: 	at play.db.jpa.GenericModel.save(GenericModel.java:232)
+2016-04-10T22:05:18.911519+00:00 app[web.1]: 	at controllers.Accounts.register(Accounts.java:33)
+2016-04-10T22:05:18.911520+00:00 app[web.1]: 	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:524)
+2016-04-10T22:05:18.911521+00:00 app[web.1]: 	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:475)
+2016-04-10T22:05:18.911521+00:00 app[web.1]: 	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:451)
+2016-04-10T22:05:18.911522+00:00 app[web.1]: 	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:446)
+2016-04-10T22:05:18.911523+00:00 app[web.1]: 	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:160)
+2016-04-10T22:05:18.911524+00:00 app[web.1]: Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
+2016-04-10T22:05:18.911523+00:00 app[web.1]: 	... 1 more
+2016-04-10T22:05:18.911525+00:00 app[web.1]: 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:123)
+2016-04-10T22:05:18.911525+00:00 app[web.1]: 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+2016-04-10T22:05:18.911527+00:00 app[web.1]: 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:124)
+2016-04-10T22:05:18.911527+00:00 app[web.1]: 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109)
+2016-04-10T22:05:18.911528+00:00 app[web.1]: 	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:189)
+2016-04-10T22:05:18.911529+00:00 app[web.1]: 	at org.hibernate.id.IdentityGenerator$GetGeneratedKeysDelegate.executeAndExtract(IdentityGenerator.java:96)
+2016-04-10T22:05:18.911529+00:00 app[web.1]: 	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:58)
+2016-04-10T22:05:18.911530+00:00 app[web.1]: 	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2987)
+2016-04-10T22:05:18.911530+00:00 app[web.1]: 	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3499)
+2016-04-10T22:05:18.911531+00:00 app[web.1]: 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81)
+2016-04-10T22:05:18.911532+00:00 app[web.1]: 	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:395)
+2016-04-10T22:05:18.911532+00:00 app[web.1]: 	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:229)
+2016-04-10T22:05:18.911533+00:00 app[web.1]: 	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:209)
+2016-04-10T22:05:18.911534+00:00 app[web.1]: 	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:193)
+2016-04-10T22:05:18.911534+00:00 app[web.1]: 	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:321)
+2016-04-10T22:05:18.911535+00:00 app[web.1]: 	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:192)
+2016-04-10T22:05:18.911535+00:00 app[web.1]: 	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:286)
+2016-04-10T22:05:18.911536+00:00 app[web.1]: 	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:125)
+2016-04-10T22:05:18.911537+00:00 app[web.1]: 	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:208)
+2016-04-10T22:05:18.911537+00:00 app[web.1]: 	at org.hibernate.ejb.event.EJB3PersistEventListener.saveWithGeneratedId(EJB3PersistEventListener.java:78)
+2016-04-10T22:05:18.911538+00:00 app[web.1]: 	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:151)
+2016-04-10T22:05:18.911539+00:00 app[web.1]: 	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:78)
+2016-04-10T22:05:18.911540+00:00 app[web.1]: 	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:772)
+2016-04-10T22:05:18.911540+00:00 app[web.1]: 	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:746)
+2016-04-10T22:05:18.911541+00:00 app[web.1]: 	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:750)
+2016-04-10T22:05:18.911541+00:00 app[web.1]: 	at org.hibernate.ejb.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:875)
+2016-04-10T22:05:18.911547+00:00 app[web.1]: 	... 9 more
+2016-04-10T22:05:18.911548+00:00 app[web.1]: Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "`"
+2016-04-10T22:05:18.911549+00:00 app[web.1]:   Position: 13
+2016-04-10T22:05:18.911550+00:00 app[web.1]: 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2102)
+2016-04-10T22:05:18.911551+00:00 app[web.1]: 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1835)
+2016-04-10T22:05:18.911551+00:00 app[web.1]: 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)
+2016-04-10T22:05:18.911552+00:00 app[web.1]: 	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:500)
+2016-04-10T22:05:18.911552+00:00 app[web.1]: 	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:388)
+2016-04-10T22:05:18.911554+00:00 app[web.1]: 	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:186)
+2016-04-10T22:05:18.911554+00:00 app[web.1]: 	... 30 more
+2016-04-10T22:05:18.911553+00:00 app[web.1]: 	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:334)
