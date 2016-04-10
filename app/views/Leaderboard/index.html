@@ -1,0 +1,71 @@
+#{extends 'main.html' /} #{set title:'Leaderboard' /}
+
+<nav class="ui inverted menu">
+	<a class="item" href="/home/${users.id}">Home</a> 
+	<a class="item" href="/members/${users.id}">Members</a> 
+	<a class="item" href="/profile/${users.id}">Profile</a> 
+	<a class="active item" href="/leaderboard/${users.id}">Leaderboard</a> 
+	<a class="item"	href="/login">Logout</a>
+</nav>
+
+<section class="ui segment">
+  <div class="ui padded aligned grid">
+  <div class="ui row">
+		<div class="green two wide column">
+			<div class="ui labeled button" tabindex="0">
+				<div class="ui green button">
+					<i class="big rocket icon"></i>
+					<h4>SPACEBOOK</h4>
+
+				</div>
+			</div>
+		</div>
+		<div class="green aligned left fourteen wide column">
+			<h1>Social Leaderboard</h1>
+		</div>
+	</div>
+</div>
+	<table class="ui very basic collapsing celled table">
+		<thead>
+			<tr>
+				<th>Members</th>
+				<th>Messaging</th>
+				<th>Friends</th>
+			</tr>
+		</thead>
+		<tbody>
+			#{list items:users, as:'user'}
+			<div class="item">
+				<tr>
+					<td>
+						<h4 class="ui image header">
+							<img src="/profile/getpicture/${user.id}"
+								class="ui mini rounded image">
+							<div class="content">
+								${user.firstName} ${user.lastName} <a href="/members/follow/${user.id}"> (follow) </a>
+							</div>
+						</h4>
+					</td>
+					<td>
+						<div class="ui green block label">
+							<p>INBOX->${user.inbox.size()} OUTBOX->${user.outbox.size()}</p>
+						</div>
+					</td>
+					<td>
+						<div class="ui green block label">
+							<p>FRIENDS->${user.friendships.size()}</p>
+						</div>
+					</td>
+				</tr>
+			</div>
+			#{/list}
+		</tbody>
+	</table>
+	  <div class="two column row">
+	      <a href="/leaderboard/mostSocial/${users.id}"><button class="ui secondary button">Most Social</button></a>
+	      <a href="/leaderboard/mostTalkative/${users.id}"><button class="ui secondary button">Most Talkative</button></a>
+      </div>
+	</div>
+</section>
+
+

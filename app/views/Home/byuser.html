@@ -1,0 +1,95 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<nav class="ui inverted menu">
+  <a class="active item" href="/home/${user.id}">Home</a>
+  <a class="item" href="/members/${user.id}">Members</a>
+  <a class="item" href="/profile/${user.id}">Profile</a>
+  <a class="item" href="/leaderboard/${user.id}}">Leaderboard</a>
+  <a class="item" href="/login">Logout</a>
+</nav>
+
+<section class="ui segment">
+  <div class="ui padded aligned grid">
+  <div class="ui row">
+		<div class="green two wide column">
+			<div class="ui labeled button" tabindex="0">
+				<div class="ui green button">
+					<i class="big rocket icon"></i>
+					<h4>SPACEBOOK</h4>
+
+				</div>
+			</div>
+		</div>
+		<div class="green four wide column">
+			<h3>
+				<img src="/profile/getpicture/${user.id}"
+					class="ui small rounded image">
+			</h3>
+		</div>
+		<div class="green aligned left ten wide column">
+			<h1>${user.firstName} ${user.lastName}'s Home Page</h1>
+		</div>
+	</div>
+</div>
+  <div class="ui two column grid segment">
+    <div class="ui row">
+      <div class="ui column">
+         <h2><i class="users icon"></i> Friends (${user.friendships.size()})</h2>
+        <div class="ui list">
+          #{list items:user.friendships, as:'friendship'}
+            <div class="item">
+              <i class="right triangle icon"></i>
+              <div class="content">
+	              <h4 class="ui image header">
+			          <img src="/profile/getpicture/${friendship.targetUser.id}" class="ui mini rounded image">
+			          <div class="content">
+			            <a href="/publicprofile/${friendship.targetUser.id}">${friendship.targetUser.firstName} ${friendship.targetUser.lastName}</a>
+	                    <a href="/home/drop/${friendship.targetUser.id}"> (drop) </a>
+			        </div>
+				  </h4>                
+              </div>
+            </div>
+          #{/list}          
+        </div>
+      </div>  
+      <div class="ui column">
+        <h2>Messages <i class="mail icon"></i></h2>
+			<table class="ui very basic collapsing celled table">
+			  <thead>
+			    <tr>
+			      <th>From</th>
+			      <th>Message</th>
+			    </tr>
+			  </thead>
+			  <tbody>        
+	          #{list items:user.inbox, as:'message'}
+	            <div class="item">            
+				     <tr>
+				      <td>
+				        <h4 class="ui image header">
+				          <img src="/profile/getpicture/${message.from.id}" class="ui mini rounded image">
+				          <div class="content">
+				            <a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>        
+				          </div>
+				      </h4>
+				      </td>
+				      <td>
+				        <div>SUBJECT: ${message.subject}</div>
+				        <div>DATE:${message.createdOn}</div>
+				        MESSAGE: ${message.messageText}
+				      </td>
+				    </tr>  
+	            </div>
+	          #{/list}	      
+            </tbody>
+          </table>
+          <div class="three column row">
+	          <a href="/home/bydate/${user.id}"><button class="ui secondary button">By Date</button></a>
+		      <a href="/home/byuser/${user.id}"><button class="ui secondary button">By User</button></a>
+		      <a href="/home/byconversation/${user.id}"><button class="ui secondary button">By Conversation</button></a>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

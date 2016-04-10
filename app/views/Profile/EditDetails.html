@@ -1,0 +1,59 @@
+#{extends 'main.html' /}
+#{set title:'Edit Details' /}
+
+<nav class="ui inverted menu">
+  <a class="active item" href="/profile/${user.id}">Return to Profile</a>
+</nav> 
+
+<h2 class="ui header">Edit details for ${user.firstName} ${user.lastName}'s Account</h2>
+
+<div class="ui padded grid">
+	<div class="green four wide column">    
+	    <div class="ui labeled button" tabindex="0">
+		  <div class="ui green button">
+		    <i class="massive rocket icon"></i>                       
+		    <h1> SPACEBOOK </h1>	
+		  </div>
+		 </div>
+	</div>
+	<div class="twelve wide column">
+	<section class="ui form segment">
+	  <form action="/editdetails/${user.id}" method="POST">
+	    <div class="two fields">
+	      <div class="field">
+	        <label>First Name</label>
+	        <input placeholder="${user.firstName}" type="text" name="firstName">
+	      </div>
+	      <div class="field">
+	        <label>Last Name</label>
+	        <input placeholder="${user.lastName}" type="text" name="lastName">
+	      </div>
+	    </div> 
+	    <div class="field">
+	      <label>Email</label>
+	      <input placeholder="${user.email}" type="text" name="email">
+	    </div>
+	    <div class="field">
+	      <label>Password</label>
+	      <input type="password" placeholder="**********" name="password">
+	    </div>
+	    <div class="two fields">
+		    <div class="field">
+		      <label>Age</label>
+		      <input placeholder="${user.age}" type="text" name="age">
+		    </div>
+		    <div class="field">
+		      <label>Nationality</label>
+		      <input placeholder="${user.nationality}" type="text" name="nationality">
+		    </div>
+	    </div>
+	    <button class="ui secondary submit button">Submit</button>
+	  </form>
+	</section> 
+  </div>
+</div>	
+
+
+
+
+

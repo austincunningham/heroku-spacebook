@@ -1,0 +1,77 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Landing page
+GET    /                                        Accounts.index
+GET    /home                                    Accounts.index
+GET    /publicprofile                           Accounts.index
+GET    /members/                                Accounts.index
+GET    /profile/                                Accounts.index
+GET    /leaderboard                             Accounts.index
+GET    /leaderboard/mostSocial                  Accounts.index
+GET    /leaderboard/mostTalkative               Accounts.index
+GET    /home/byconversation                     Accounts.index
+GET    /home/byuser                             Accounts.index
+GET    /home/bydate                             Accounts.index
+
+
+
+# Accounts
+
+GET    /signup                                  Accounts.signup
+GET    /login                                   Accounts.login
+GET    /logout                                  Accounts.logout
+POST   /authenticate                            Accounts.authenticate
+POST   /register                                Accounts.register
+POST   /editdetails/{id}                        Accounts.editdetails
+
+
+# Home page
+GET    /home/{id}                               Home.index
+GET    /home/byconversation/{id}                Home.byConversation
+GET    /home/byuser/{id}                        Home.byuser
+GET    /home/bydate/{id}                        Home.bydate
+
+# Drop
+GET    /home/drop/{id}                          Home.drop
+
+
+# Members page
+GET     /members/{id}                           Members.index
+
+# Profile page
+GET     /profile/{id}                           Profile.index
+POST    /message                                Profile.message
+POST    /profile/changestatus                   Profile.changeStatus
+POST    /profile/uploadpicture/{id}             Profile.uploadPicture
+GET     /profile/getpicture/{id}                Profile.getPicture
+GET     /profile/editdetails/{id}               Profile.EditDetails
+
+# Public Profiles
+GET     /publicprofile/{id}                     PublicProfile.visit
+POST    /publicprofile/sendmessage/{id}         PublicProfile.sendMessage
+
+# Leaderboard page
+GET     /leaderboard/{id}                       Leaderboard.index
+GET     /leaderboard/mostSocial/{id}            Leaderboard.mostSocial
+GET     /leaderboard/mostTalkative/{id}         Leaderboard.mostTalkative
+
+# Follow
+GET     /members/follow/{id}                    Members.follow
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+
+

@@ -1,0 +1,94 @@
+User(homer):
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    password: secret
+    age: 38
+    nationality: USA
+    
+
+User(marge):
+    firstName: Marge
+    lastName: Simpson
+    email: marge@simpson.com
+    password: secret
+    age: 38
+    nationality: USA
+    friendships: 
+                - friend3
+    
+User(lisa):
+    firstName: Lisa
+    lastName: Simpson
+    email: lisa@simpson.com
+    password: secret
+    age: 8
+    nationality: US
+
+User(bart):
+    firstName: Bart
+    lastName: Simpson
+    email: bart@simpson.com
+    password: secret
+    age: 10
+    nationality: Yank
+    
+User(maggie):
+    firstName: Maggie
+    lastName: Simpson
+    email: maggie@simpson.com
+    password: secret
+    age: 2
+    nationality: doodle
+    
+User(Austin):
+    firstName: Austin
+    lastName: Cunningham
+    email: austincunningham@oceanfree.net
+    password: secret
+    age: 42
+    nationality: Irish
+    
+Message(message1):
+    from : marge
+    to   : homer
+    subject: 'Homer are you there!!'
+    messageText: 'how are things going?'
+    
+Message(message2):
+    from : lisa
+    to   : homer
+    subject: 'Help Homer!!'
+    messageText: 'Get me outta here!' 
+    
+Friendship(friend1):
+  sourceUser: homer
+  targetUser: marge
+  
+Friendship(friend2):
+  sourceUser: homer
+  targetUser: lisa
+  
+Friendship(friend3):
+  sourceUser: marge
+  targetUser: homer
+
+User(homer):
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    password: secret
+    age: 38
+    nationality: USA
+    friendships: 
+                - friend1 
+                - friend2     
+User(marge):
+    firstName: Marge
+    lastName: Simpson
+    email: marge@simpson.com
+    password: secret
+    age: 38
+    nationality: USA
+    friendships: 
+                - friend3

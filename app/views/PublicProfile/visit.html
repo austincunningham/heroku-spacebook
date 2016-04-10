@@ -1,0 +1,79 @@
+#{extends 'main.html' /}
+#{set title:'Spacebook' /}
+
+<nav class="ui inverted menu">   
+  <a class="ui active item" href="/home/${user.id}">Back to Home</a> 
+</nav>
+
+<section class="ui raised segment">
+<section class="ui segment">
+  <div class="ui padded aligned grid">
+  <div class="ui row">
+		<div class="green two wide column">
+			<div class="ui labeled button" tabindex="0">
+				<div class="ui green button">
+					<i class="big rocket icon"></i>
+					<h4>SPACEBOOK</h4>
+
+				</div>
+			</div>
+		</div>
+		<div class="green aligned left fourteen wide column">
+			<h1>${user.firstName} ${user.lastName}'s Profile</h1>
+		</div>
+	</div>
+</div>
+  <section class="ui  two column grid segment">
+    <div class="row">
+      <div class="column">
+        <div class="ui small image">
+          <img src="/profile/getpicture/${user.id}"/> 
+        </div> 
+        <p> <div class="ui green block label">
+           <b>Status: </b> ${user.statusText} 
+        </div></p> 
+        <p>Nationality: ${user.nationality}</p>
+        <form action="/publicprofile/sendmessage/${user.id}" class="ui form" method="post">
+          <div class="ui form">
+  			<div class="field">
+    			<label>Subject</label>
+    			<input name="subject" type="text">
+  			</div>
+		</div>
+          <div class="field">
+          	<label>Message</label>
+            <textarea name="messageText"></textarea>
+          </div>
+          <button  class="ui fluid black labeled submit icon button">
+            <i class="icon edit"></i> Send
+          </button>
+        </form> 
+      </div>
+      <div class="column">
+        <div class="ui small header">Messages</div>
+        <hr>
+        <ul>
+          #{list items:user.inbox, as:'message'}
+            <div class="ui icon message">
+            <i class="small mail icon"></i>            
+            <div class="header">
+			      <img src="/profile/getpicture/${message.from.id}" class="ui mini rounded image"> ${message.from.firstName}
+			    </div>
+			  
+			  <div class="content">
+			    
+			    Arrive at : ${message.createdOn}
+			    <div class="subject">
+			      Subject: ${message.subject} 
+			      
+			    </div>
+			    <p>${message.messageText}</p>
+			  </div>
+		      </div>    
+           
+          #{/list}
+        </ul>
+      </div>
+    </div>
+  </section>    
+</section>

@@ -1,0 +1,65 @@
+#{extends 'main.html' /}
+#{set title:'Profile' /}
+
+<nav class="ui inverted menu">
+  <a class="item" href="/home/${user.id}">Home</a>
+  <a class="item" href="/members/${user.id}">Members</a>
+  <a class="active item" href="/profile/${user.id}">Profile</a>
+  <a class="item" href="/leaderboard/${user.id}">Leaderboard</a>
+  <a class="item" href="/login">Logout</a>
+</nav>
+
+
+<section class="ui segment">
+
+<div class="ui three column padded grid segment">
+  <div class="ui row">
+  <div class="green three wide column">
+	<div class="ui labeled button" tabindex="0">
+	  <div class="ui green button">
+		    <i class="massive rocket icon"></i>                       
+		    <h2> SPACEBOOK </h2>	
+	  </div>
+	</div>
+	</div>
+	<div class="green four wide column">
+		  <h3> Name: ${user.firstName} ${user.lastName}'s </h2>
+		  <h4> Email: ${user.email}</h4>
+		  <h4> Age: ${user.age}</h4>
+		  <h4> Nationality: ${user.nationality}</h4>
+	</div>
+	<div class="green nine wide column">
+	<h1>${user.firstName} ${user.lastName}'s Profile Page</h1>
+	<a href="/profile/editdetails/${user.id}">
+	<input class="ui secondary button" value="Edit details" /></a>
+	
+	</div>
+  </div>
+</div> 
+
+  <div class="ui two column grid segment">
+    <div class="ui row">
+      <div class="ui column">
+        <div class="ui medium image">
+          <img src="/profile/getpicture/${user.id}">
+        </div>
+        <form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    
+          <input type="file" name="picture" /> 
+          <input type="submit" name="submit" value="upload" />
+        </form>
+      </div>
+      <div class="ui column form segment">
+        <h2 class="ui small header"> Status</h2>
+        <div class="ui green block label">
+          <p> ${user.statusText} </p>
+        </div>
+        <hr>
+        <form action="/profile/changestatus" method="post">
+          <h3 class="ui inverted block header">Enter Status</h3>
+          <textarea class="ui field" textarea rows="2" name="profiletext"> </textarea>
+          <input class="ui secondary button" type="submit" name="submit" value="Change" />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

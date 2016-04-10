@@ -1,0 +1,61 @@
+#{extends 'main.html' /}
+#{set title:'Members' /}
+
+<nav class="ui inverted menu">
+  <a class="item" href="/home/${users.id}">Home</a>
+  <a class="active item" >Members</a>
+  <a class="item" href="/profile/${users.id}">Profile</a>
+  <a class="item" href="/leaderboard/${users.id}">Leaderboard</a>
+  <a class="item" href="/login">Logout</a>
+</nav>
+
+<section class="ui segment">
+  <div class="ui padded aligned grid">
+  <div class="ui row">
+		<div class="green two wide column">
+			<div class="ui labeled button" tabindex="0">
+				<div class="ui green button">
+					<i class="big rocket icon"></i>
+					<h4>SPACEBOOK</h4>
+
+				</div>
+			</div>
+		</div>
+		<div class="green aligned left fourteen wide column">
+			<h1>SpaceBook's Members</h1>
+		</div>
+	</div>
+</div>
+  <table class="ui very basic collapsing celled table">
+			  <thead>
+			    <tr>
+			      <th>Members</th>
+			      <th>Status</th>
+			    </tr>
+			  </thead>
+			  <tbody>        
+	          #{list items:users, as:'user'}
+	            <div class="item">            
+				     <tr>
+				      <td>
+				        <h4 class="ui image header">
+				          <img src="/profile/getpicture/${user.id}" class="ui mini rounded image">
+				          <div class="content">
+				            ${user.firstName} ${user.lastName}<a href="/members/follow/${user.id}"> (follow) </a>           	
+				          </div>
+				      </h4>
+				      </td>
+				      <td>
+				        <div class="ui green block label">
+          	               <p>${user.statusText} </p>
+                        </div>
+				      </td>
+				    </tr>  
+	            </div>
+	          #{/list}	      
+            </tbody>
+          </table>
+  </div>
+</section>
+
+
