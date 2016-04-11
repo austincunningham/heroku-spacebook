@@ -19,11 +19,11 @@ public class Members extends Controller {
     	users.remove(me);
         render(users);
     }
-    public static void follow(String name)
-    {
-      Logger.info("Following " + name);
-      render(name);
-    }
+//    public static void follow(String name)
+//    {
+//      Logger.info("Following " + name);
+//      render(name);
+//    }
     public static void follow(Long id)
     {
         User friend = User.findById(id);

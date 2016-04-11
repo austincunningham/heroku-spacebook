@@ -2,10 +2,10 @@
 #{set title:'follow' /}
 
 <nav class="ui inverted menu">   
-  <a class="ui active item" href="/home/${id}">Back to Home</a> 
+  <a class="ui active item" href="/home/${user.id}">Back to Home</a> 
 </nav>
 
 <p>
   <h1>You are following ${name}</h1>
-  <img src="/public/images/${name}.gif"/>  
+  <img src="/profile/getpicture/${user.id}"/>  
 </p>
