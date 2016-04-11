@@ -10,8 +10,8 @@
 GET    /                                        Accounts.index
 GET    /home                                    Accounts.index
 GET    /publicprofile                           Accounts.index
-GET    /members/                                Accounts.index
-GET    /profile/                                Accounts.index
+GET    /members                                 Accounts.index
+GET    /profile                                 Accounts.index
 GET    /leaderboard                             Accounts.index
 GET    /leaderboard/mostSocial                  Accounts.index
 GET    /leaderboard/mostTalkative               Accounts.index
