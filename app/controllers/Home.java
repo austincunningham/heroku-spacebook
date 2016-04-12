@@ -9,9 +9,9 @@ import models.*;
 
 public class Home extends Controller {
 
-    public static void index() {
-        String userId = session.get("logged_in_userid");
-        User user = User.findById(Long.parseLong(userId));
+    public static void index() 
+    {
+        User user = Accounts.getLoggedin();
         render(user);
     }
     public static void drop(Long id)

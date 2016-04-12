@@ -11,8 +11,7 @@ public class Members extends Controller {
 
     public static void index(Long id) 
     {
-    	String userId = session.get("logged_in_userid");
-    	User me = User.findById(Long.parseLong(userId));
+    	User me = Accounts.getLoggedin();
     	
     	//User me = User.findById(id);
     	List<User> users = User.findAll();

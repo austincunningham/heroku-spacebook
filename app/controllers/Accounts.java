@@ -103,5 +103,20 @@ public class Accounts extends Controller {
 			login();
 		}
 	}
-
+    
+	public static User getLoggedin()
+	{
+		User user = null;
+		if (session.get("logged_in_userid") != null)
+		{
+			String userId = session.get("logged_in_userid");
+	        user = User.findById(Long.parseLong(userId));
+			
+		}
+		else
+		{
+			index();
+		}
+	    return user;
+	}
 }

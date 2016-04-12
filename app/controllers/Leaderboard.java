@@ -9,8 +9,7 @@ public class Leaderboard extends Controller
 {
 	public static void index() 
 	{		
-		String userId = session.get("logged_in_userid");
-        User user = User.findById(Long.parseLong(userId));
+		User user = Accounts.getLoggedin();
         
         List<User> users = User.findAll();
 		render(users);

@@ -1,10 +1,10 @@
 #{extends 'main.html' /} #{set title:'Leaderboard' /}
 
 <nav class="ui inverted menu">
-	<a class="item" href="/home/${users.id}">Home</a> 
-	<a class="item" href="/members/${users.id}">Members</a> 
-	<a class="item" href="/profile/${users.id}">Profile</a> 
-	<a class="active item" href="/leaderboard/${users.id}">Leaderboard</a> 
+	<a class="item" href="/home">Home</a> 
+	<a class="item" href="/members">Members</a> 
+	<a class="item" href="/profile">Profile</a> 
+	<a class="active item" href="/leaderboard">Leaderboard</a> 
 	<a class="item"	href="/login">Logout</a>
 </nav>
 
@@ -62,8 +62,8 @@
 		</tbody>
 	</table>
 	  <div class="two column row">
-	      <a href="/leaderboard/mostSocial/${users.id}"><button class="ui secondary button">Most Social</button></a>
-	      <a href="/leaderboard/mostTalkative/${users.id}"><button class="ui secondary button">Most Talkative</button></a>
+	      <a href="/leaderboard/mostSocial"><button class="ui secondary button">Most Social</button></a>
+	      <a href="/leaderboard/mostTalkative"><button class="ui secondary button">Most Talkative</button></a>
       </div>
 	</div>
 </section>
