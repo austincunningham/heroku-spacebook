@@ -176,7 +176,7 @@ public class User extends Model
 	      }
 	      for(User y: users)
 	      {
-	    	  Logger.info("Sorted:"+users.size());
+	    	  Logger.info("Sorted:"+y.outbox.size());
 	      }
 	  }
 	  
@@ -197,7 +197,7 @@ public class User extends Model
 	      }
 	      for(User y: users)
 	      {
-	    	  Logger.info("Sorted:"+users.size());
+	    	  Logger.info("Sorted:"+ y.friendships.size());
 	      }
 	  }
 	  

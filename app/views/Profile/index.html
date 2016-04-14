@@ -43,7 +43,7 @@
         <div class="ui medium image">
           <img src="/profile/getpicture/${user.id}">
         </div>
-        <form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    
+        <form action="https://up.flickr.com/services/upload/${user.id}" method="post" enctype="multipart/form-data">    
           <input type="file" name="picture" /> 
           <input type="submit" name="submit" value="upload" />
         </form>
