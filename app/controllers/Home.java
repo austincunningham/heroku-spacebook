@@ -26,7 +26,7 @@ public class Home extends Controller {
         index();
     }
     
-    public static void byDate(Long id)
+    public static void byDate()
     {
     	String userId = session.get("logged_in_userid");
         User user = User.findById(Long.parseLong(userId));
@@ -39,7 +39,7 @@ public class Home extends Controller {
         render(user);
     }
     
-    public static void byUser(Long id)
+    public static void byUser()
     {
     	String userId = session.get("logged_in_userid");
         User user = User.findById(Long.parseLong(userId));
@@ -52,7 +52,7 @@ public class Home extends Controller {
         render(user);
     }
     
-    public static void byConversation(Long id)
+    public static void byConversation()
     {
     	String userId = session.get("logged_in_userid");
         User user = User.findById(Long.parseLong(userId));

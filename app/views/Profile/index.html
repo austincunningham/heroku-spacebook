@@ -2,11 +2,11 @@
 #{set title:'Profile' /}
 
 <nav class="ui inverted menu">
-  <a class="item" href="/home">Home</a>
-  <a class="item" href="/members">Members</a>
-  <a class="active item" href="/profile">Profile</a>
-  <a class="item" href="/leaderboard">Leaderboard</a>
-  <a class="item" href="/login">Logout</a>
+  <a class="item" href="/home"><i class="home icon"></i> Home </a>
+  <a class="item" href="/members"><i class="users icon"></i> Members</a>
+  <a class="active item" href="/profile"><i class="user icon"></i> Profile</a>
+  <a class="item" href="/leaderboard"><i class="line chart icon"></i> Leaderboard</a>
+  <a class="item" href="/login"><i class="sign out icon"></i> Logout</a>
 </nav>
 
 
@@ -26,11 +26,11 @@
 		  <h3> Name: ${user.firstName} ${user.lastName}'s </h2>
 		  <h4> Email: ${user.email}</h4>
 		  <h4> Age: ${user.age}</h4>
-		  <h4> Nationality: ${user.nationality}</h4>
+		  <h4> Nationality: ${user.nationality} <i class="${user.nationality} flag"></i></h4>
 	</div>
 	<div class="green nine wide column">
 	<h1>${user.firstName} ${user.lastName}'s Profile Page</h1>
-	<a href="/profile/editdetails/${user.id}">
+	<a href="/profile/editdetails">
 	<input class="ui secondary button" value="Edit details" /></a>
 	
 	</div>

@@ -31,7 +31,7 @@ public class Members extends Controller {
         User me = User.findById(Long.parseLong(userId));
 
         me.befriend(friend);
-        Logger.info("Following " + friend.firstName +" "+ friend.lastName);
+        Logger.info("Tried Following " + friend.firstName +" "+ friend.lastName);
         Home.index();
     }
 }

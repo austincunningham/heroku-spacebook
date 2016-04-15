@@ -16,7 +16,7 @@ GET    /login                                   Accounts.login
 GET    /logout                                  Accounts.logout
 POST   /authenticate                            Accounts.authenticate
 POST   /register                                Accounts.register
-
+POST   /editdetails/{id}                        Accounts.editdetails
 
 
 # Home page
@@ -38,7 +38,7 @@ POST    /message                                Profile.message
 POST    /profile/changestatus                   Profile.changeStatus
 POST    /profile/uploadpicture                  Profile.uploadPicture
 GET     /profile/getpicture/{id}                Profile.getPicture
-GET     /profile/editdetails/{id}               Profile.EditDetails
+GET     /profile/editdetails                    Profile.EditDetails
 
 # Public Profiles
 GET     /publicprofile/{id}                     PublicProfile.visit

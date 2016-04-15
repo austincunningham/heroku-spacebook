@@ -2,8 +2,8 @@
 #{set title:'Signup for Spacebook' /}
 
 <nav class="ui inverted menu">
-  <a class="active item" href="/signup"> Signup  </a>
-  <a class="item" href="/login">  Login   </a>
+  <a class="active item" href="/signup"><i class="add user icon"></i> Signup  </a>
+  <a class="item" href="/login"><i class="sign in icon"></i> Login   </a>
 </nav> 
 <div class="ui padded grid">
 	<div class="green four wide column">    
@@ -49,4 +49,18 @@
 	  </form>
 	</section> 
   </div>
-</div>	
+</div>
+
+  <div class="field error">
+    <label>Gender</label>
+    <div class="ui selection dropdown">
+      <div class="default text">Select</div>
+      <i class="dropdown icon"></i>
+      <input name="gender" type="hidden">
+      <div class="menu">
+        <div class="item" data-value="male">Male</div>
+        <div class="item" data-value="female">Female</div>
+      </div>
+    </div>
+  </div>	
+

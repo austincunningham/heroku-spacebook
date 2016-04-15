@@ -2,7 +2,7 @@
 #{set title:'Spacebook' /}
 
 <nav class="ui inverted menu">   
-  <a class="ui active item" href="/home/${user.id}">Back to Home</a> 
+  <a class="ui active item" href="/home"><i class="home icon"></i> Back to Home</a> 
 </nav>
 
 <section class="ui raised segment">
@@ -32,7 +32,7 @@
         <p> <div class="ui green block label">
            <b>Status: </b> ${user.statusText} 
         </div></p> 
-        <p>Nationality: ${user.nationality}</p>
+        <p>Nationality: ${user.nationality} <i class="${user.nationality} flag"></i></p>
         <form action="/publicprofile/sendmessage/${user.id}" class="ui form" method="post">
           <div class="ui form">
   			<div class="field">
