@@ -38,7 +38,6 @@ public class User extends Model {
 	public List<Message> outbox = new ArrayList<Message>();
 
 	public User(String firstName, String lastName, String email, String password, String age, String nationality)
-
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;

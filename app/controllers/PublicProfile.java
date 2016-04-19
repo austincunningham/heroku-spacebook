@@ -28,7 +28,7 @@ public class PublicProfile extends Controller {
     	 User toUser = User.findById(id);
     	 DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
     	 Date date = new Date();
-    	    	 
+    	 dateformat();   	 
     	 Logger.info("Message from user " + 
     		        fromUser.firstName + ' ' + fromUser.lastName +" to " +
     		        toUser.firstName + ' ' + toUser.lastName +": " +
@@ -36,5 +36,12 @@ public class PublicProfile extends Controller {
     	 
     	 fromUser.sendMessage(toUser, messageText, subject , date);
          visit (id);
+    }
+    
+    public static void dateformat()
+    {
+      Date date = new Date();
+      DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+      String datetime=df.format(date);
     }
 }
