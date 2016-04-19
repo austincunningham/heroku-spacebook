@@ -65,17 +65,3 @@
   </div>
 </section>
 
-
-http://flickr.com/services/auth/?api_key=[97e073bb2c27aba11fc0b81adcf67b6e]&perms=[write]&api_sig=[3ac87c9e14053ebb59a7edebbda7dca0]
-<div class="ui two column grid segment">
-    <div class="ui row">
-      <div class="ui column">
-        <div class="ui medium image">
-          <img src="/profile/getpicture/${user.id}">
-        </div>
-<!--         <form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">     -->
-        <form action="https://up.flickr.com/services/upload/${user.id}" method="post" enctype="multipart/form-data">    
-          <input type="file" name="picture" /> 
-          <input type="submit" name="submit" value="upload" />
-        </form>
-      </div>
