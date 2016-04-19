@@ -36,7 +36,7 @@ GET     /members                                Members.index
 GET     /profile                                Profile.index
 POST    /message                                Profile.message
 POST    /profile/changestatus                   Profile.changeStatus
-POST    /profile/uploadpicture                  Profile.uploadPicture
+POST    /profile/uploadpicture/{id}             Profile.uploadPicture
 GET     /profile/getpicture/{id}                Profile.getPicture
 GET     /profile/editdetails                    Profile.EditDetails
 

@@ -41,8 +41,10 @@ public class Profile extends Controller
 	
 	public static void getPicture(Long id) 
 	  {
-	    User user = User.findById(id);
-	    Blob picture = user.profilePicture;
+//		String userId = session.get("logged_in_userid");
+//		User user = User.findById(Long.parseLong(userId));
+		User user = User.findById(id);
+		Blob picture = user.profilePicture;
 	    if (picture.exists())
 	    {
 	      response.setContentTypeIfNotSet(picture.type());

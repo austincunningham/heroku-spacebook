@@ -25,11 +25,19 @@ public class Accounts extends Controller {
 		render();
 	}
 
-	public static void register(String firstName, String lastName, String email, String password, String age, String nationality) {
-		Logger.info(
-				"The following user has been added -->" + firstName + " " + lastName + " " + email + " " + password + " " +age + " "+nationality);
-
-		User user = new User(firstName, lastName, email, password, age, nationality);
+//	public static void register(String firstName, String lastName, String email, String password, String age, String nationality) {
+//		Logger.info(
+//				"The following user has been added -->" + firstName + " " + lastName + " " + email + " " + password + " " +age + " "+nationality);
+//
+//		User user = new User(firstName, lastName, email, password, age, nationality);
+//		user.save();
+//
+//		index();
+//	}
+	
+	public static void register(User user) {
+		Logger.info("The following user has been added -->" + user.firstName + " "
+	                + user.lastName + " " + user.email + " " + user.password + " " +user.age + " "+user.nationality);
 		user.save();
 
 		index();
