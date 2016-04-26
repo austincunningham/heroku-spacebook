@@ -28,6 +28,7 @@
 	<table class="ui very basic collapsing celled table">
 		<thead>
 			<tr>
+				<th>Rank</th>
 				<th>Members</th>
 				<th>Messaging</th>
 				<th>Following</th>
@@ -37,6 +38,9 @@
 			#{list items:users, as:'user'}
 			<div class="item">
 				<tr>
+					<td>
+                        ${users.indexOf(user)+1}
+				    </td>
 					<td>
 						<h4 class="ui image header">
 							<img src="/profile/getpicture/${user.id}"
