@@ -58,7 +58,7 @@ public class Home extends Controller {
         User user = User.findById(Long.parseLong(userId));
         Logger.info("Sorting inbox conversations message " + user.email);
         
-        ArrayList<ArrayList<Message>> conversation = new ArrayList<>();
+        ArrayList<ArrayList<Message>> conversation = new ArrayList<ArrayList<Message>>();
         
         for(Friendship f: user.friendships)
         {
