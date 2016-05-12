@@ -23,25 +23,17 @@ public class PublicProfile extends Controller {
     }
     public static void sendMessage(Long id, String messageText, String subject, Date d)
     {
+      
     	 String userId = session.get("logged_in_userid");
     	 User fromUser = User.findById(Long.parseLong(userId));
     	 User toUser = User.findById(id);
-    	 DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-    	 Date date = new Date();
-    	 dateformat();   	 
+    	 Date date = new Date();  	 
     	 Logger.info("Message from user " + 
     		        fromUser.firstName + ' ' + fromUser.lastName +" to " +
     		        toUser.firstName + ' ' + toUser.lastName +": " +
-    		        messageText+ " "+subject+ " "+df.format(date));  
+    		        messageText+ " "+subject+ " "+ date);  
     	 
     	 fromUser.sendMessage(toUser, messageText, subject , date);
-         visit (id);
-    }
-    
-    public static void dateformat()
-    {
-      Date date = new Date();
-      DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-      String datetime=df.format(date);
+       visit (id);
     }
 }

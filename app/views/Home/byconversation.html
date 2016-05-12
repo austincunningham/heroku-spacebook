@@ -58,21 +58,24 @@
 			<table class="ui basic collapsing celled table">
 			  <thead>
 			    <tr>
-			      <th>From</th>
+			      <th>Conversation</th>
 			      <th>Message</th>
 			    </tr>
 			  </thead>
-			  <tbody>        
-	          #{list items:user.inbox, as:'message'}
-	            <div class="item">            
+			  <tbody>
+			  
+			  #{list items:conversation, as:'con'}
+                #{list items:con, as:'message'}
+                 <div class="item">            
 				     <tr>
 				      <td>
 				        <h4 class="ui image header">
+				          <img src="/profile/getpicture/${message.to.id}" class="ui mini rounded image">
 				          <img src="/profile/getpicture/${message.from.id}" class="ui mini rounded image">
 				          <div class="content">
-				            <a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>        
-				          </div>
-				      </h4>
+				            <a href="/publicprofile/${message.to.id}"> ${message.to.firstName}</a> to  
+				            <a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>   
+				         </h4> 
 				      </td>
 				      <td>
 				        <div>SUBJECT: ${message.subject}</div>
@@ -81,7 +84,9 @@
 				      </td>
 				    </tr>  
 	            </div>
-	          #{/list}	      
+	            #{/list}
+	                     
+              #{/list}
             </tbody>
           </table>
           <div class="three column row">

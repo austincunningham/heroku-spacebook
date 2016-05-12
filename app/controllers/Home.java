@@ -56,13 +56,21 @@ public class Home extends Controller {
     {
     	String userId = session.get("logged_in_userid");
         User user = User.findById(Long.parseLong(userId));
-        Logger.info("Sorting inbox conversations message" + user.email);
-        User.selectionSort(user.inbox);//it appears to sort
-        for(Message y: user.inbox)
+        Logger.info("Sorting inbox conversations message " + user.email);
+        
+        ArrayList<ArrayList<Message>> conversation = new ArrayList<>();
+        
+        for(Friendship f: user.friendships)
         {
-      	  Logger.info("Render:"+y.messageText);
-        }//Logger confirms its sorted
-        render(user);//can't render index as it doesn't sort
+          conversation.add(models.User.getConversation(user,f.targetUser));
+          Logger.info("friend "+f.targetUser.firstName);
+        }
+        for(ArrayList<Message>  m: conversation)
+        {
+          for(Message g: m)
+            Logger.info("message: "+g.messageText+" (from: "+g.from.firstName+ " to: "+g.to.firstName+")");
+        }//have to be able to do this in html with play tags??
+        render(user,conversation);//can't render index as it doesn't sort
     }
     
 

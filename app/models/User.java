@@ -143,7 +143,41 @@ public class User extends Model {
 			Logger.info("Sorted:" + y.from.firstName);
 		}
 	}
+	
 
+  /**
+   * Generates a conversation comprising a list of messages between two users.
+   * The list is sorted by reference to date and time. Recall that a message
+   * object contains an instance of Date object
+   * 
+   * @param user
+   *          the user who initiates the conversation
+   * @param friend
+   *          the user with whom the initiator is having a conversation
+   * @return the list of messages which makes up the conversation
+   */
+  public static ArrayList<Message> getConversation(User user, User friend)
+  {
+    ArrayList<Message> userConversation = new ArrayList<Message>();    
+    for (Message m : user.inbox)
+    {
+      if (m.from.firstName.compareTo(friend.firstName) == 0)
+      {
+        userConversation.add(m);
+      }
+    }
+    for (Message m : user.outbox)
+    {
+      if (m.to.firstName.compareTo(friend.firstName) == 0)
+      {
+        userConversation.add(m);
+      }
+    }
+    selectionSortDate(userConversation);
+    return userConversation;
+  }
+  
+  
 	public static void selectionSortDate(List<Message> m) {
 		for (int i = 0; i < m.size(); i += 1) {
 			for (int j = i; j < m.size(); j += 1) {
