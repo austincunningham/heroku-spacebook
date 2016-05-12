@@ -21,9 +21,9 @@ POST   /editdetails/{id}                        Accounts.editdetails
 
 # Home page
 GET    /home                                    Home.index
-GET    /home/byconversation                     Home.byConversation
-GET    /home/byuser                             Home.byuser
-GET    /home/bydate                             Home.bydate
+GET    /home/byConversation                     Home.byConversation
+GET    /home/byUser                             Home.byUser
+GET    /home/byDate                             Home.byDate
 
 # Drop
 GET    /home/drop/{id}                          Home.drop
