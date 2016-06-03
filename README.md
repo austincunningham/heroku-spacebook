@@ -17,7 +17,7 @@
 * live version of app at http://spacebook-austin.herokuapp.com/
 * Configuration: clone repo, play run , access localhost:9000 on browser
 * Dependencies: Need Play framework 1.4 or greater 
-### * Database configuration: ###
+### Database configuration: ###
 * Live version on Heroku configured with MySQL no config needed
 
 * locally need to configure H2:mem 
