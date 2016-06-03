@@ -12,17 +12,11 @@ public class Members extends Controller {
     public static void index(Long id) 
     {
     	User me = Accounts.getLoggedin();
-    	
-    	//User me = User.findById(id);
     	List<User> users = User.findAll();
     	users.remove(me);
         render(users);
     }
-//    public static void follow(String name)
-//    {
-//      Logger.info("Following " + name);
-//      render(name);
-//    }
+
     public static void follow(Long id)
     {
         User friend = User.findById(id);

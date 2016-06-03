@@ -19,7 +19,6 @@ public class Profile extends Controller
   {
     String userId = session.get("logged_in_userid");
     User user = User.findById(Long.parseLong(userId));
-    // User user = User.findById(id);
     Logger.info("Editing details for " + user.firstName + " " + user.lastName);
     render(user);
   }

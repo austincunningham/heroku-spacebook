@@ -69,8 +69,8 @@ public class Home extends Controller {
         {
           for(Message g: m)
             Logger.info("message: "+g.messageText+" (from: "+g.from.firstName+ " to: "+g.to.firstName+")");
-        }//have to be able to do this in html with play tags??
-        render(user,conversation);//can't render index as it doesn't sort
+        }
+        render(user,conversation);
     }
     
 
