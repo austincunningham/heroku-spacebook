@@ -13,4 +13,14 @@
 
 ### How do I get set up? ###
 
+* Summary of set up
 * live version of app at http://spacebook-austin.herokuapp.com/
+* Configuration: clone repo, play run , access localhost:9000 on browser
+* Dependencies: Need Play framework 1.4 or greater
+* Database configuration:locally H2:mem preloaded with bootstrap, Live version on Heroku configured with MySQL no config needed
+
+
+### Who do I talk to? ###
+
+* Repo owner or admin
+* Austin Cunningham austincunningham@oceanfree.net
