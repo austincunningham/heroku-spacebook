@@ -17,13 +17,17 @@
 * live version of app at http://spacebook-austin.herokuapp.com/
 * Configuration: clone repo, play run , access localhost:9000 on browser
 * Dependencies: Need Play framework 1.4 or greater 
-* Database configuration:locally need to configure H2:mem 
+* Database configuration:
+
+locally need to configure H2:mem 
 edit the file spacebook\conf\application.conf 
 comment line 
-#-----------------------clearDB--------------------------------------------------
+
+
+/#-----------------------clearDB--------------------------------------------------
 db.default=mysql://b51a491b1e270d:91814849@us-cdbr-iron-east-03.cleardb.net/heroku_42821ad588d10e2?reconnect=true
 and uncomment line
-#db.default=mem
+/#db.default=mem
 
 Live version on Heroku configured with MySQL no config needed
 
