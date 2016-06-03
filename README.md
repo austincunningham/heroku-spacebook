@@ -24,10 +24,10 @@ edit the file spacebook\conf\application.conf
 comment line 
 
 
-**** #-----------------------clearDB--------------------------------------------------
-**** db.default=mysql://b51a491b1e270d:91814849@us-cdbr-iron-east-03.cleardb.net/heroku_42821ad588d10e2?reconnect=true
+** #-----------------------clearDB--------------------------------------------------
+** db.default=mysql://b51a491b1e270d:91814849@us-cdbr-iron-east-03.cleardb.net/heroku_42821ad588d10e2?reconnect=true
 and uncomment line
-**** #db.default=mem
+** #db.default=mem
 
 Live version on Heroku configured with MySQL no config needed
 
